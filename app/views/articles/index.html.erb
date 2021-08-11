@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="d-flex flex-row justify-content-between align-items-center">
+   <h1>List of Articles</h1>
+  <%= link_to "Create New Article", new_article_path, class: 'btn bnt-primary' %>
+  </div>
+  <% @articles.each do |article| %>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+        <div class="fw-bold"><%= link_to article.title, article_path(article) %></div>
+        <%= article.content %>
+        </div>
+      </li>
+    </ul>
+  <% end %>
+</div>
